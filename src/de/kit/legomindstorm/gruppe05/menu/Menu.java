@@ -1,19 +1,29 @@
 package de.kit.legomindstorm.gruppe05.menu;
 
+import de.kit.legomindstorm.gruppe05.states.MenuState;
 import lejos.hardware.lcd.LCD;
 import lejos.utility.TextMenu;
 
 public class Menu {
+	
+	MenuState menuState;
 	TextMenu t;
 	
-	public Menu(String[] items) {
-		t = new TextMenu(items);
+	public Menu(String[] items, MenuState menuState) {
+		this.menuState = menuState;
+		this.t = new TextMenu(items);
 	}
 	
+	/*
+	 * Shows a menu where an item is chosen
+	 * The corresponding state is started
+	 */
 	public void showMenu() {
 		
 		//index of selected item
 		int index = t.select();
 		LCD.clear();
+		//
+		menuState.startState(index);
 	}
 }

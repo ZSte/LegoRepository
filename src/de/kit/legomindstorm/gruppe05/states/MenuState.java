@@ -64,7 +64,7 @@ public class MenuState implements State {
 			System.out.println("STATE " + s + " " + s.getClass().getName());
 		}
 		
-		m = new Menu(menuItems);
+		m = new Menu(menuItems, this);
 		m.showMenu();
 	}
 	
