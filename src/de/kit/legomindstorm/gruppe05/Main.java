@@ -8,11 +8,11 @@ public class Main {
 		// TODO Auto-generated method stub
 		Context c = new Context();
 		
-		//start the state
+		//start the menu state as first
 		MenuState m = new MenuState();
 		m.start(c);
-		LineFollowState l = new LineFollowState();
-		l.start(c);
+		//LineFollowState l = new LineFollowState();
+		//l.start(c);
 	}
 
 }
