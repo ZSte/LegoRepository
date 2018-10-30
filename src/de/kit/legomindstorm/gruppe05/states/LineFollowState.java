@@ -81,6 +81,7 @@ public class LineFollowState implements State {
 	 * @return
 	 */
 	public boolean isWhite() {
+		colorSensorProv.fetchSample(colorSensorSample, 0);
 		return colorSensorSample[0] == 6;
 	}
 	
@@ -89,7 +90,7 @@ public class LineFollowState implements State {
 	 */
 	public void searchWhite() {
 		int i = 1;
-		while(colorSensorSample[0] != 6 && i < 10 && !isWhite()/*whiteFound == false*/) {
+		while(/*colorSensorSample[0] != 6 && */i < 10 && !isWhite()/*whiteFound == false*/) {
 			turnRight(i);
 			if(isWhite()) {
 				break;
