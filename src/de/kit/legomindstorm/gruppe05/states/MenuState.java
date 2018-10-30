@@ -1,19 +1,22 @@
 package de.kit.legomindstorm.gruppe05.states;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 import de.kit.legomindstorm.gruppe05.Context;
 import de.kit.legomindstorm.gruppe05.menu.Menu;
+
+/*
+ * The first state entered
+ * represents the menu
+ */
 
 public class MenuState implements State {
 	
 	private Menu m;
 
 	/*
-	 * States that can be entered from Menu
+	 * States that can be entered from Menu are initialized
 	 */
 	private BridgeState b = new BridgeState();
 	private PushObstaclesState p = new PushObstaclesState();
@@ -31,6 +34,10 @@ public class MenuState implements State {
 	
 	private Context c;
 
+	/**
+	 * Starts the MenuState
+	 * Initializes a LinkedHashMap which contains all other states
+	 */
 	public void start(Context c) {
 		this.c = c;
 		System.out.println("Entered Menu State");
@@ -68,11 +75,18 @@ public class MenuState implements State {
 		m.showMenu();
 	}
 	
+	/**
+	 * Returns the State's name
+	 */
 	public String toString() {
 		return "MenuState";
 	}
 	
+	/**
+	 * Starts the state with index i in the states array
+	 * @param i index of the state which is started
+	 */
 	public void startState(int i) {
-		states[i - 1].start(c);
+		states[i].start(c);
 	}
 }

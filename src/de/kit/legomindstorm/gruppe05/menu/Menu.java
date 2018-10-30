@@ -9,12 +9,17 @@ public class Menu {
 	MenuState menuState;
 	TextMenu t;
 	
+	/**
+	 * Creates a new menu
+	 * @param items items that are shown in the menu
+	 * @param menuState
+	 */
 	public Menu(String[] items, MenuState menuState) {
 		this.menuState = menuState;
 		this.t = new TextMenu(items);
 	}
 	
-	/*
+	/**
 	 * Shows a menu where an item is chosen
 	 * The corresponding state is started
 	 */
