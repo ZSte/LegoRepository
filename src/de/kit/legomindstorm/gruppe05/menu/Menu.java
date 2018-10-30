@@ -6,8 +6,8 @@ import lejos.utility.TextMenu;
 
 public class Menu {
 	
-	MenuState menuState;
-	TextMenu t;
+	private MenuState menuState;
+	private TextMenu t;
 	
 	/**
 	 * Creates a new menu

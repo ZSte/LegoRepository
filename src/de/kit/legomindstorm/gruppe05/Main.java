@@ -1,5 +1,4 @@
 package de.kit.legomindstorm.gruppe05;
-import de.kit.legomindstorm.gruppe05.states.LineFollowState;
 import de.kit.legomindstorm.gruppe05.states.MenuState;
 
 public class Main {
